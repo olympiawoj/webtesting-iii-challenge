@@ -5,11 +5,6 @@ import Dashboard from "./Dashboard.js";
 import Display from "../display/display.js";
 import Controls from "../controls/Controls.js";
 
-// Does it render without failure?
-// Does it render correctly / the right thing(s)?
-// Does it render expect output based on props/state/default state?
-// Does it handle events correctly?
-
 // ### Dashboard
 // - shows the controls and display
 
