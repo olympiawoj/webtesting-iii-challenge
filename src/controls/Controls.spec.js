@@ -3,19 +3,18 @@ import React from "react";
 import { render, cleanup } from "react-testing-library";
 import Controls from "./Controls";
 import "jest-dom/extend-expect";
-
-afterEach(cleanup);
+import "react-testing-library/cleanup-after-each"; //add this line to our test file
 
 describe("Controls", () => {
   it("renders the Controls component without failure", () => {
     render(<Controls />);
   });
 
-  //   it("should render two toggle buttons", () => {
-  //     const buttons = document.querySelectorAll(".toggle-btn");
-  //     console.log(buttons);
-  //     expect(buttons).toHaveLength(2);
-  //   });
+  it("should render two toggle buttons", () => {
+    render(<Controls />);
+    const buttons = document.querySelectorAll(".toggle-btn");
+    expect(buttons).toHaveLength(2);
+  });
 
   it("should display disabled 'lock gate' button on default", () => {
     const { getByText } = render(<Controls />);
@@ -38,3 +37,15 @@ describe("Controls", () => {
     expect(getByText(/open gate/i)).toBeDisabled();
   });
 });
+
+// describe('Lock/Unlock Button', () => {
+//     it('is enabled if gate is closed', () => {
+//       const closed = true;
+//       const mock = jest.fn();
+//       const { getByText } = render(
+//         <Controls closed={closed} toggleLocked={mock} />
+//       );
+//       fireEvent.click(getByText(/^lock gate$/i));
+//       expect(mock).toHaveBeenCalledTimes(1);
+//     });
+//   });
