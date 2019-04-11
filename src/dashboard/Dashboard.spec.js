@@ -10,6 +10,9 @@ import Controls from "../controls/Controls.js";
 // Does it render expect output based on props/state/default state?
 // Does it handle events correctly?
 
+// ### Dashboard
+// - shows the controls and display
+
 describe("<Dashboard/>", () => {
   // Does it render without failure?
   it("renders without failure", () => {
